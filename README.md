@@ -1,7 +1,7 @@
 # ABN Amro Transactions
 
 Docker image to download bank account transactions 
-from [ABN Amro](https://abnamro.nl) internet banking.
+from [ABN Amro](https://www.abnamro.nl) internet banking.
 
 ## Rationale
 As of now (September 2016), ABN Amro doesn't provide API to expose a list
@@ -22,7 +22,7 @@ docker run \
   --env ABNAMRO_CARD_NUMBER="[card_number]" \
   --env ABNAMRO_IDENTIFICATION_CODE="[identification_code]" \
   --volume [download-dir]=/data \
-  --privileged
+  --privileged -v /dev/shm:/dev/shm
   mkrcah/abnamro-tx:latest \
   --period-from="[period-from]" --period-to="[period-to]"
 ```
@@ -37,7 +37,7 @@ There is an optional argument available:
 
 Login credentials can be also supplied via a file using the [`--env-file` flag](https://docs.docker.com/engine/reference/commandline/run/#/set-environment-variables-e-env-env-file).
 
-Note: `--privileged` flag is required since Chrome is making use of unix containers as well. If not supplied, Chrome will not start. 
+Note: `--privileged -v /dev/shm:/dev/shm` is required in order for Chromium to start 
 ## Example:
 
 ```
