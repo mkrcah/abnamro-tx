@@ -21,7 +21,7 @@ docker run \
   --env ABNAMRO_ACCOUNT_NUMBER="[account_number]" \
   --env ABNAMRO_CARD_NUMBER="[card_number]" \
   --env ABNAMRO_IDENTIFICATION_CODE="[identification_code]" \
-  --volume [download-dir]=/data \
+  --volume [download-dir]:/data \
   --privileged -v /dev/shm:/dev/shm
   mkrcah/abnamro-tx:latest \
   --period-from="[period-from]" --period-to="[period-to]"
@@ -47,7 +47,7 @@ ABNAMRO_CARD_NUMBER=111
 ABNAMRO_IDENTIFICATION_CODE=123123
 
 $ docker run --env-file=env.list \
-   --volume $(pwd)/export-data=/data \ 
+   --volume $(pwd)/export-data:/data \ 
    --privileged mkrcah/abnamro-tx \ 
    --period-from "2016-01-01" --period-to "2016-08-31" \
    --export-filename "abnamro.csv"
