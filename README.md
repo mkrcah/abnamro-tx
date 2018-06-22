@@ -61,6 +61,9 @@ $ ls ./export-data
 abnamro.csv
 ```
 
+## Alternatives
+
+- Python library, without the need of a headless browser: https://github.com/djc/abna
 
 ## Troubleshooting
 
