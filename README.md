@@ -28,7 +28,7 @@ docker run \
 ```
 
 where
-- `account_number`, `card_number` and `identification_code` are login credentials. Not that you have to have the PIN-login enabled.
+- `account_number`, `card_number` and `identification_code` are login credentials. Note that you have to have the PIN-login enabled.
 - `period-from` and `period-to` defines time filter for transactions, in format `YYYY-MM-DD`
 - `download-dir` a directory where the CSV file with transactions will be saved
 
@@ -67,11 +67,9 @@ abnamro.csv
 
 ## Troubleshooting
 
-Try to open internet banking manually and fill in provided data.
+Try to open internet banking manually and fill in the provided data.
 If not, try installing selenium and running the script locally.
 If that doesn't help, or you find yourself lost, please open an issue.
 
 ## License
 [MIT](http://choosealicense.com/licenses/mit/)
-
-
